@@ -29,9 +29,8 @@ class HomeFragment : Fragment() {
         )
 
         binding.butoInserir.setOnClickListener {
-            var max = db.collection("times").count().toString()
+            var max = number.toString()
             number++
-            max += number.toString()
             db.collection("times").document(max).set(
                 hashMapOf("tiempo" to binding.tiempo.text.toString().toInt())
             )
