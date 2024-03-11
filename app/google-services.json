@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "141242191847",
+    "project_id": "cubetogetherr",
+    "storage_bucket": "cubetogetherr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141242191847:android:7b54195c589a0e1e6cf742",
+        "android_client_info": {
+          "package_name": "com.arnaull.cubetogether"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141242191847-9f34ck8s9b23ktnvur03gkfjroius26h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE0ehHcrkfmwtLR1V2RI3SRv_uHf0-dBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141242191847-9f34ck8s9b23ktnvur03gkfjroius26h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141242191847:android:1ebd2516dc78c6a16cf742",
+        "android_client_info": {
+          "package_name": "com.example.cubetogether"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141242191847-9f34ck8s9b23ktnvur03gkfjroius26h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE0ehHcrkfmwtLR1V2RI3SRv_uHf0-dBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141242191847-9f34ck8s9b23ktnvur03gkfjroius26h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
