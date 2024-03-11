@@ -66,69 +66,13 @@
                 android:text="Tiempos"
                 android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/tiempo1"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="40dp"
-                android:textColor="@color/white"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="15dp" />
 
-            <TextView
-                android:id="@+id/tiempo2"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="60dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tiempo3"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="80dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tiempo4"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="20dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tiempo5"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="120dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tiempo6"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="140dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tiempo7"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="160dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tiempo8"
-                android:layout_width="335dp"
-                android:layout_height="439dp"
-                android:text="Tiempo 1"
-                android:paddingTop="100dp"
-                android:textColor="@color/white"/>
 
         </androidx.cardview.widget.CardView>
 

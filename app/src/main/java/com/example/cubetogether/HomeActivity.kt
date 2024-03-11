@@ -11,9 +11,15 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.cubetogether.adapter.TiempoAdapter
 import com.example.cubetogether.databinding.ActivityHomeBinding
+import com.example.cubetogether.model.Tiempo
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
+import java.time.LocalDateTime
 
 enum class ProviderType {
     BASIC
@@ -21,9 +27,15 @@ enum class ProviderType {
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
-
     private lateinit var binding : ActivityHomeBinding
+
+    private var db = Firebase.firestore
+
+    private var number = 1
+
+    private lateinit var tiempoAdapter: TiempoAdapter
+
+    private lateinit var tiempoList: List<Tiempo>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,25 +48,13 @@ class HomeActivity : AppCompatActivity() {
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
 
-        setup(email?: "", provider?: "  ")
-
         supportFragmentManager.commit {
 
             replace<HomeFragment>(R.id.Frames)
             setReorderingAllowed(true)
             addToBackStack("replacement")
         }
+
     }
 
-    private fun setup(email: String, provider: String) {
-
-        title = "Inicio"
-        binding.emailTextView.text = email
-        binding.providerTextView.text = provider
-
-        binding.logOutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            onBackPressed()
-        }
-    }
 }
