@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
 
     private var string = ""
 
-    private lateinit var list: List<TiempoBO>
+    private var list: List<TiempoBO> = listOf(TiempoBO("", ""))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,8 +61,6 @@ class HomeFragment : Fragment() {
 
         initRecyclerView()
 
-        list = listOf(TiempoBO("", ""))
-
         db = FirebaseFirestore.getInstance()
 
         db.collection("times")
@@ -74,7 +72,8 @@ class HomeFragment : Fragment() {
                     Log.d(TAG, "${document.id} => ${document.data}")
 
                         list += TiempoBO(document.data.toString().split("{data=")[1].split(',')[0],
-                            document.data.toString().split("tiempo=")[1].split('}')[0] + "s")
+                                document.data.toString().split("tiempo=")[1].split('}')[0] + "s")
+
                 }
                 println(list)
                 adapter = (TiempoAdapter(list))
@@ -103,11 +102,14 @@ class HomeFragment : Fragment() {
                 .collection("perUsuari")
                 .get()
                 .addOnSuccessListener { documents ->
+                    list = emptyList()
                     for (document in documents) {
                         Log.d(TAG, "${document.id} => ${document.data}")
 
-                        list += TiempoBO(document.data.toString().split("{data=")[1].split(',')[0],
-                            document.data.toString().split("tiempo=")[1].split('}')[0] + "s")
+                        list += listOf(
+                            TiempoBO(document.data.toString().split("{data=")[1].split(',')[0],
+                                document.data.toString().split("tiempo=")[1].split('}')[0] + "s")
+                        )
                     }
                     println(list)
                     adapter = (TiempoAdapter(list))
