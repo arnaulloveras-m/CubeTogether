@@ -8,7 +8,7 @@ import com.example.cubetogether.model.TiempoBO
 
 class TiempoAdapter(private var dataSet: List<TiempoBO>) : RecyclerView.Adapter<TiempoAdapter.TiempoViewHolder>() {
 
-    inner class TiempoViewHolder(private val binding: ViewTiempoSingleBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class TiempoViewHolder(val binding: ViewTiempoSingleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: TiempoBO) {
             binding.TiempoTextView.text = item.tiempo.toString()
             binding.DataTextView.text = item.data
@@ -27,6 +27,7 @@ class TiempoAdapter(private var dataSet: List<TiempoBO>) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: TiempoViewHolder, position: Int) {
         val item = dataSet[position]
         holder.bind(item)
+
     }
 
     fun updateDataSet(list: List<TiempoBO>) {

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.example.cubetogether.databinding.ActivityAuthBinding
@@ -20,8 +21,26 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
 
+        binding.butoRestablir.setOnClickListener {
+            if (binding.emailEditText.text.toString().isNotEmpty()) {
+                resetPassword()
+            } else {
+                Toast.makeText(this, "Se tiene que escribir un email", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         //Setup
         setup()
+    }
+
+    private fun resetPassword() {
+        FirebaseAuth.getInstance()
+            .setLanguageCode("es")
+
+        FirebaseAuth.getInstance()
+            .sendPasswordResetEmail(binding.emailEditText.text.toString())
+
+        Toast.makeText(this, "Se ha enviado un corre para restablecer la contrasña", Toast.LENGTH_SHORT).show()
     }
 
 
