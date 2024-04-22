@@ -2,13 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Principal"
+        android:id="@+id/homeFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:icon="@drawable/home"
         android:title="Principal" />
     <item
-        android:id="@+id/Perfil"
+        android:id="@+id/recordFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_arrow_outward_24"
+        android:title="Records" />
+    <item
+        android:id="@+id/metodesFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/tutorial"
+        android:title="Tutoriales" />
+    <item
+        android:id="@+id/authFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/person"
         android:title="Perfil" />
 </menu>

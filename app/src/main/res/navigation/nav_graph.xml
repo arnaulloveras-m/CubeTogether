@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.cubetogether.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.example.cubetogether.RecordFragment"
+        android:label="RecordFragment" />
+    <fragment
+        android:id="@+id/metodesFragment"
+        android:name="com.example.cubetogether.MetodesFragment"
+        android:label="fragment_metodes"
+        tools:layout="@layout/fragment_metodes" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.cubetogether.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_authActivity"
+            app:destination="@id/authActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/authActivity"
+        android:name="com.example.cubetogether.AuthActivity"
+        android:label="AuthActivity" />
+</navigation>

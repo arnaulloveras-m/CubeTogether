@@ -8,41 +8,34 @@
         android:layout_height="match_parent"
         tools:context=".HomeActivity">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="535dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/emailTextView"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="" />
-
-
-            </LinearLayout>
-
-
-
-        <FrameLayout
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/Frames"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:navGraph="@navigation/nav_graph"
+            tools:layout="@layout/fragment_home" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:itemIconTint="@drawable/bottom_nav_colors"
+            app:itemTextColor="@drawable/bottom_nav_colors"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </FrameLayout>
-
+            app:menu="@menu/menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

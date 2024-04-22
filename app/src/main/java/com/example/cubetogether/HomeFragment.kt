@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.service.controls.ControlsProviderService.TAG
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -18,6 +20,7 @@ import com.example.cubetogether.model.Tiempo
 import com.example.cubetogether.model.TiempoBO
 import com.example.cubetogether.viewModel.HomeViewModel
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -36,15 +39,9 @@ class HomeFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-
-    private lateinit var firestoreRecyclerOptions: FirestoreRecyclerOptions<Tiempo>
-
     private val viewModel: HomeViewModel by viewModels();
 
-    private var string = ""
-
     private var list: List<TiempoBO> = listOf(TiempoBO("", ""))
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,6 +50,9 @@ class HomeFragment : Fragment() {
             inflater,
             R.layout.fragment_home, container, false
         )
+
+        val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavView)
+        bottomNavigationView.visibility = View.VISIBLE
 
         val auth = FirebaseAuth.getInstance()
         val userLogged = auth.currentUser?.email.toString()
@@ -145,6 +145,8 @@ class HomeFragment : Fragment() {
         adapter = TiempoAdapter(list)
         binding?.recyclerView?.adapter = adapter
     }
+
+
 
 }
 

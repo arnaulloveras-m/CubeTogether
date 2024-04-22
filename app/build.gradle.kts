@@ -55,6 +55,9 @@ dependencies {
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
 
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
+
     // Room
     implementation ("androidx.room:room-runtime:2.4.2")
     kapt ("androidx.room:room-compiler:2.4.2")
@@ -78,4 +81,6 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
 
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
+
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1")
 }

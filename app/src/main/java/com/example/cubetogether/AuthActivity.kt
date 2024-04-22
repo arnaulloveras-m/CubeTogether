@@ -9,17 +9,23 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.cubetogether.databinding.ActivityAuthBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
+
+
 
         binding.butoRestablir.setOnClickListener {
             if (binding.emailEditText.text.toString().isNotEmpty()) {
