@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -75,12 +76,12 @@ dependencies {
     implementation ("com.google.firebase:firebase-bom:32.7.1")
     implementation ("com.google.firebase:firebase-auth:22.3.1")
     implementation ("com.google.firebase:firebase-firestore:24.10.2")
+    implementation ("com.google.firebase:firebase-core:9.6.1")
+    implementation ("com.google.gms:google-services:4.3.2")
 
     implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
 
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
 
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
-
-    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1")
 }

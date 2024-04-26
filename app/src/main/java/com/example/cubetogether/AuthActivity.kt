@@ -13,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.cubetogether.databinding.ActivityAuthBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
@@ -24,8 +25,6 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
-
-
 
         binding.butoRestablir.setOnClickListener {
             if (binding.emailEditText.text.toString().isNotEmpty()) {
