@@ -18,7 +18,7 @@ class RecordProvider {
                         "4: R' U' R U F U' R' U' F U2 F\n" +
                         "5: R' F' R U2 R U' R' U' F U' F",
                 "Soluciones: https://www.youtube.com/watch?v=24c5FvI-g6Q",
-                "https://www.youtube.com/shorts/zvpqrG0UO2o\n"
+                "https://www.youtube.com/shorts/zvpqrG0UO2o"
 
             ),
             Record(
@@ -30,7 +30,7 @@ class RecordProvider {
                         "  F2L 4: U' R U R' y' U R' U' R\n" +
                         "  OLL: r' U' R U' R' U2 r\n" +
                         "  AUF: U",
-                "https://www.youtube.com/watch?v=gh8HX4itF_w"
+                "\n\n\n\n\n\n\n\n\n\n\nhttps://www.youtube.com/watch?v=gh8HX4itF_w"
             ),
             Record(
                 "Average 3x3 4.48 Yiheng Wang",
@@ -40,8 +40,9 @@ class RecordProvider {
                         "Scramble 3(3.99): U L2' B2 L2 D' R2 U' L2 B' L' F' U R D R2 B' R2 U F U'\n" +
                         "Scramble 4(3.95): U2' F2 U F2 U2 R2 D2 U' L2 F D' B2 D R B U2 B2 D' R' U\n" +
                         "Scramble 5(5.99): F2' D L2 B2 U2 R2 D R2 B2 D2 F' R B2 D2 L' D2 L U R' U2",
-                "https://ruwix.com/blog/yiheng-wang-4_48-rubiks-cube-average-record/",
-                "https://www.youtube.com/watch?v=2RvktW6njp4"
+                "\n\n\n\nhttps://ruwix.com/blog/yiheng-wang-4_48-rubiks-cube-average-record/\n\n\n",
+                   "\n\n\n" +
+                        "\nhttps://www.youtube.com/watch?v=2RvktW6njp4"
             ),
         )
     }

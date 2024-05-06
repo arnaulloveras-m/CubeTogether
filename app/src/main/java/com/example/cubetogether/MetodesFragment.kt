@@ -40,7 +40,15 @@ class MetodesFragment : Fragment() {
 
         webView.webChromeClient = WebChromeClient()
 
-        val video = binding.videoView
+        val video: WebView = binding.videoFridrich
+
+        val fridrich = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/d_hR8pn67wA?si=bjvE5CJnrqM2q13j\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+
+        video.loadData(fridrich, "text/html", "utf-8")
+
+        video.settings.javaScriptEnabled = true
+
+        video.webChromeClient = WebChromeClient()
 
         return binding.root
     }
