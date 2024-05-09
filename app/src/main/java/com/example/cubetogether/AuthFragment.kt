@@ -11,11 +11,12 @@ import com.example.cubetogether.databinding.FragmentAuthBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 
 class AuthFragment : Fragment() {
 
-    private var db = Firebase.firestore
+    private var db = FirebaseFirestore.getInstance()
 
     private lateinit var binding: FragmentAuthBinding
 
@@ -37,6 +38,26 @@ class AuthFragment : Fragment() {
 
         binding.button.setOnClickListener {
             findNavController().navigate(R.id.action_authFragment_to_authActivity)
+        }
+
+        binding.butoGuardar.setOnClickListener {
+            db.collection("users").document(email).set(
+                hashMapOf("Telefono" to binding.idTelefon.text.toString(),
+                    "Ciudad" to binding.idCiutat.text.toString())
+            )
+        }
+
+        binding.butoRecuperar.setOnClickListener {
+            db.collection("users").document(email).get().addOnSuccessListener {
+                binding.idTelefon.setText(it.get("Telefono") as String?)
+                binding.idCiutat.setText(it.get("Ciudad") as String?)
+            }
+        }
+
+        binding.butoEsborrar.setOnClickListener {
+            db.collection("users").document(email).delete()
+            binding.idTelefon.setText("")
+            binding.idCiutat.setText("")
         }
 
         return binding.root
