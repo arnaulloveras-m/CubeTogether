@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="40dp"
-            android:text="Metode Fridrich (Avançat)"
+            android:text="Metodo Fridrich (Avanzado)"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/videoFridrich"
             app:layout_constraintStart_toStartOf="parent"

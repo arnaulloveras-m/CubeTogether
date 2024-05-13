@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cubetogether.databinding.ViewTiempoSingleBinding
 import com.example.cubetogether.model.TiempoBO
 
-class TiempoAdapter(private var dataSet: List<TiempoBO>) : RecyclerView.Adapter<TiempoAdapter.TiempoViewHolder>() {
+class TiempoAdapter(private var dataSet: List<TiempoBO>, private val onClickDelete:(Int) -> Unit) : RecyclerView.Adapter<TiempoAdapter.TiempoViewHolder>() {
 
     inner class TiempoViewHolder(val binding: ViewTiempoSingleBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: TiempoBO) {
-            binding.TiempoTextView.text = item.tiempo.toString()
+        fun bind(item: TiempoBO, onClickDelete: (Int) -> Unit) {
+            binding.TiempoTextView.text = item.tiempo
             binding.DataTextView.text = item.data
+            binding.butoEliminar.setOnClickListener {
+                onClickDelete(adapterPosition)
+            }
         }
     }
 
@@ -26,7 +29,7 @@ class TiempoAdapter(private var dataSet: List<TiempoBO>) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: TiempoViewHolder, position: Int) {
         val item = dataSet[position]
-        holder.bind(item)
+        holder.bind(item, onClickDelete)
 
     }
 

@@ -27,7 +27,7 @@
             android:layout_marginBottom="370dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Introduce aquí tus tiempos"
+            android:hint="Introduce aquí tus tiempos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
