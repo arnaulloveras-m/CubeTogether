@@ -21,7 +21,8 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        Thread.sleep(2000)
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
@@ -45,7 +46,7 @@ class AuthActivity : AppCompatActivity() {
         FirebaseAuth.getInstance()
             .sendPasswordResetEmail(binding.emailEditText.text.toString())
 
-        Toast.makeText(this, "Se ha enviado un corre para restablecer la contrasña", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Se ha enviado un correo para restablecer la contrasña", Toast.LENGTH_SHORT).show()
     }
 
 
